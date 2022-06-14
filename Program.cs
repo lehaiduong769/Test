@@ -12,7 +12,7 @@ namespace server
     {
         static void Main(string[] args)
         {
-            //1. Listen
+            //1. Listen - test
             IPAddress address = IPAddress.Parse("127.0.0.1");
             TcpListener listener = new TcpListener(address, 8888);
             Console.WriteLine("Sever is listening...");
@@ -23,7 +23,7 @@ namespace server
             byte[] data = new byte[1024];
             socket.Receive(data);
             string str = Encoding.ASCII.GetString(data);
-            Console.WriteLine("Client name: \"" + str + "\"");
+            console.WriteLine("Client name: \"" + str + "\"");
 
             //3. Send
             socket.Send(Encoding.ASCII.GetBytes("Hello, " + str));
